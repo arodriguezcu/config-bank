@@ -1,0 +1,67 @@
+server:
+#  port: 8095
+  port: 80
+#  hostname: localhost
+#  hostname: 192.168.0.106
+  
+spring:
+  application:
+    name: micro-withdrawal
+  data:
+    mongodb:
+      database: db_withdrawal
+#      uri: mongodb://${server.hostname}:12500/${spring.data.mongodb.database}
+      uri: mongodb://arodriguezcu:WoZiG7Enr4sZXJsPA6J1yAICIAeGAzczurFJNm8k3q0apmZjMRPlAdHKqoA4vCnXvwLT40VxnskXjU6AwznsuA==@arodriguezcu.mongo.cosmos.azure.com:10255/${spring.data.mongodb.database}?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@arodriguezcu@
+  kafka:
+    bootstrap-servers: ${kafka.server.hostname}:${kafka.server.port}
+
+kafka:
+  server:
+    hostname: 20.94.188.219
+    port: 9092
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:80/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+    hostname: az-eureka-server.azurewebsites.net
+
+topic:
+  name: withdrawal-topic
+  partitions: 1
+  replicas: 1
+            
+msg:
+  error:
+    registro:
+      notfound.all: RETIROS NO IDENTIFICADOS
+      notfound.create: RETIRO NO SE PUDO CREAR
+      positive: MONTO DEBE SER POSITIVO
+      exceed: MONTO EXCEDE EL SALDO DISPONIBLE
+      account.exists: NUMERO DE CUENTA NO EXISTE
+      card.exists: NUMERO DE TARJETA NO EXISTE
+            
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 2s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
+        recordExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.util.concurrent.TimeoutException
+          - java.io.IOException
+          - java.net.ConnectException
+    instances:
+      withdrawalServiceCircuitBreaker:
+        baseConfig: default
