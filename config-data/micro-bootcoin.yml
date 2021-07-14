@@ -49,6 +49,7 @@ msg:
       request:      
         notfound.all: SOLICITUDES NO ENCONTRADOS 
         if.exists: SOLICITUD YA EXISTE
+        exists: SOLICITUD NO EXISTE
       rate:      
         notfound.all: TIPO DE CAMBIO NO ENCONTRADOS
 
