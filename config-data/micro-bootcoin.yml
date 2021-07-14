@@ -49,6 +49,8 @@ msg:
       request:      
         notfound.all: SOLICITUDES NO ENCONTRADOS 
         if.exists: SOLICITUD YA EXISTE
+      rate:      
+        notfound.all: TIPO DE CAMBIO NO ENCONTRADOS
 
 resilience4j:
   circuitbreaker:
