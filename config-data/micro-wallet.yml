@@ -41,6 +41,7 @@ msg:
       phonefin.exists: NUMERO DE TELEFONO FINAL NO EXISTE
       accountini.exists: NUMERO DE CUENTA INICIAL NO EXISTE
       accountfin.exists: NUMERO DE CUENTA FINAL NO EXISTE
+      card.exists: NUMERO DE TARJETA NO EXISTE
       positive: MONTO DEBE SER POSITIVO
       exceed: MONTO EXCEDE EL SALDO DISPONIBLE      
       notfound.update: MONEDERO NO IDENTIFICADO PARA ACTUALIZAR
