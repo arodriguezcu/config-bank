@@ -46,6 +46,9 @@ msg:
       notfound.update: MONEDERO NO IDENTIFICADO PARA ACTUALIZAR
       notfound.delete: MONEDERO NO IDENTIFICADO PARA ELIMINAR
       wallet.delete: MONEDERO ELIMINADO
+      request:      
+        notfound.all: SOLICITUDES NO ENCONTRADOS 
+        if.exists: SOLICITUD YA EXISTE
 
 resilience4j:
   circuitbreaker:
