@@ -38,7 +38,7 @@ msg:
         create: CLIENTE NO SE PUDO CREAR
         update: CLIENTE NO IDENTIFICADO PARA ACTUALIZAR
         delete: CLIENTE NO IDENTIFICADO PARA ELIMINAR      
-      notfound: CLIENTE NO IDENTIFICADO
+        customer: CLIENTE NO IDENTIFICADO
       if.exists: CLIENTE YA EXISTE
       customer.delete: CLIENTE ELIMINADO
 
