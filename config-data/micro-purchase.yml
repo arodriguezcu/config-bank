@@ -38,23 +38,27 @@ topic:
 msg:
   error:
     registro:
-      notfound.all: PURCHASES NO ENCONTRADOS
-      product.all: PRODUCTOS NO ENCONTRADOS
-      customer.all: CLIENTE NO ENCONTRADO
-      notfound: PURCHASE NO IDENTIFICADO      
-      notfound.create: PURCHASE NO SE PUDO CREAR
-      product.exists: PRODUCTO NO EXISTE
-      card.exists: NUMERO DE TARJETA YA EXISTE
+      notfound:
+        all: PURCHASES NO ENCONTRADOS
+        create: PURCHASE NO SE PUDO CREAR      
+        update: PURCHASE NO IDENTIFICADO PARA ACTUALIZAR
+        delete: PURCHASE NO IDENTIFICADO PARA ELIMINAR      
+      product:
+        all: PRODUCTOS NO ENCONTRADOS
+        exists: PRODUCTO NO EXISTE
+        available: CLIENTE YA CUENTA CON EL PRODUCTO
+        business: CLIENTE EMPRESARIAL NO PUEDE OBTENER EL PRODUCTO      
+      customer:
+        all: CLIENTE NO ENCONTRADO
+        exists: CLIENTES NO EXISTEN      
+      card:
+        exists: NUMERO DE TARJETA YA EXISTE
+        notexists: NUMERO DE TARJETA NO EXISTE      
       positive: MONTO DEBE SER POSITIVO
-      customer.exists: CLIENTES NO EXISTEN
       owners: TITULARES DEBEN SER EL MISMO TIPO DE CLIENTE (PERSONAL O EMPRESARIAL)
       business.owner: CLIENTE EMPRESARIAL MAXIMO 1 TITULAR
       minimum.owner: MINIMO 1 TITULAR
-      product.available: CLIENTE YA CUENTA CON EL PRODUCTO
       credit.card: NECESITA UNA TARJETA DE CREDITO
-      product.business: CLIENTE EMPRESARIAL NO PUEDE OBTENER EL PRODUCTO      
-      notfound.update: PURCHASE NO IDENTIFICADO PARA ACTUALIZAR
-      notfound.delete: PURCHASE NO IDENTIFICADO PARA ELIMINAR
       purchase.delete: PURCHASE ELIMINADO
             
 resilience4j:
