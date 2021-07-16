@@ -33,13 +33,14 @@ eureka:
 msg:
   error:
     registro:
-      notfound.all: CUENTAS NO IDENTIFICADAS
-      notfound: CUENTA NO IDENTIFICADA
-      notfound.create: CUENTA NO SE PUDO CREAR
+      notfound:
+        all: CUENTAS NO IDENTIFICADAS
+        account: CUENTA NO IDENTIFICADA
+        create: CUENTA NO SE PUDO CREAR
+        update: CUENTA NO IDENTIFICADA PARA ACTUALIZAR
+        delete: CUENTA NO IDENTIFICADA PARA ELIMINAR
       if.exists: CUENTA YA EXISTE
       card.notexists: NUMERO DE TARJETA NO EXISTE
-      notfound.update: CUENTA NO IDENTIFICADA PARA ACTUALIZAR
-      notfound.delete: CUENTA NO IDENTIFICADA PARA ELIMINAR
       account.delete: CUENTA ELIMINADA
 
 resilience4j:
