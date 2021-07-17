@@ -18,7 +18,15 @@ spring:
 kafka:
   server:
     hostname: 20.94.188.219
-    port: 9092
+    port: 9092          
+  topic:
+    name: purchase-topic
+    partitions: 1
+    replicas: 1
+    groupid: purchase-group
+  consumer:
+    customer: customer-topic
+    product: product-topic
 
 eureka:
   client:
@@ -29,19 +37,13 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: az-eureka-server.azurewebsites.net
-      
-topic:
-  name: purchase-topic
-  partitions: 1
-  replicas: 1
-            
+
 msg:
   error:
     registro:
       notfound:
         all: PURCHASES NO ENCONTRADOS
-        create: PURCHASE NO SE PUDO CREAR      
-        update: PURCHASE NO IDENTIFICADO PARA ACTUALIZAR
+        create: PURCHASE NO SE PUDO CREAR
         delete: PURCHASE NO IDENTIFICADO PARA ELIMINAR      
       product:
         all: PRODUCTOS NO ENCONTRADOS
