@@ -18,7 +18,7 @@ spring:
 kafka:
   server:
     hostname: 20.94.188.219
-    port: 9092          
+    port: 9092
   topic:
     name: purchase-topic
     partitions: 1
