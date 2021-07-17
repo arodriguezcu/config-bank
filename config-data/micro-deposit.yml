@@ -19,6 +19,14 @@ kafka:
   server:
     hostname: 20.94.188.219
     port: 9092
+  topic:
+    name: deposit-topic
+    partitions: 1
+    replicas: 1
+    groupid: deposit-group
+  consumer:
+    purchase: purchase-topic
+    account: account-topic
 
 eureka:
   client:
@@ -29,11 +37,6 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: az-eureka-server.azurewebsites.net
-      
-topic:
-  name: deposit-topic
-  partitions: 1
-  replicas: 1
             
 msg:
   error:
