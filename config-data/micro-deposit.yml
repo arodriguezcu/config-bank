@@ -25,7 +25,6 @@ kafka:
     replicas: 1
     groupid: deposit-group
   consumer:
-    purchase: purchase-topic
     account: account-topic
 
 eureka:

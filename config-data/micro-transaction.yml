@@ -19,6 +19,17 @@ kafka:
   server:
     hostname: 20.94.188.219
     port: 9092
+  topic:
+    name: transaction-topic
+    partitions: 1
+    replicas: 1
+    groupid: transaction-group
+  consumer:
+    account: account-topic
+    deposit: deposit-topic
+    withdrawal: withdrawal-topic
+    credit: credit-topic
+    payment: payment-topic
 
 eureka:
   client:
