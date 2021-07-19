@@ -30,6 +30,9 @@ kafka:
     withdrawal: withdrawal-topic
     credit: credit-topic
     payment: payment-topic
+  producer:
+    deposit: transfer-deposit-topic
+    withdrawal: transfer-withdrawal-topic
 
 eureka:
   client:
