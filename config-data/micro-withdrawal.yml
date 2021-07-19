@@ -19,6 +19,14 @@ kafka:
   server:
     hostname: 20.94.188.219
     port: 9092
+  topic:
+    name: withdrawal-topic
+    partitions: 1
+    replicas: 1
+    groupid: withdrawal-group
+  consumer:
+    purchase: purchase-topic
+    account: account-topic
 
 eureka:
   client:
@@ -29,17 +37,13 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: az-eureka-server.azurewebsites.net
-
-topic:
-  name: withdrawal-topic
-  partitions: 1
-  replicas: 1
             
 msg:
   error:
     registro:
-      notfound.all: RETIROS NO IDENTIFICADOS
-      notfound.create: RETIRO NO SE PUDO CREAR
+      notfound:
+        all: RETIROS NO IDENTIFICADOS
+        create: RETIRO NO SE PUDO CREAR
       positive: MONTO DEBE SER POSITIVO
       exceed: MONTO EXCEDE EL SALDO DISPONIBLE
       account.exists: NUMERO DE CUENTA NO EXISTE
