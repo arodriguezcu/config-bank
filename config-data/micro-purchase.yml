@@ -27,6 +27,7 @@ kafka:
   consumer:
     customer: customer-topic
     product: product-topic
+    transaction: transaction-topic
 
 eureka:
   client:

@@ -26,6 +26,7 @@ kafka:
     groupid: withdrawal-group
   consumer:
     account: account-topic
+    transaction: transfer-withdrawal-topic
 
 eureka:
   client:

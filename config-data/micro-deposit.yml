@@ -26,6 +26,7 @@ kafka:
     groupid: deposit-group
   consumer:
     account: account-topic
+    transaction: transfer-deposit-topic
 
 eureka:
   client:

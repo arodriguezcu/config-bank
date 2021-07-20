@@ -26,6 +26,7 @@ kafka:
     groupid: account-group
   consumer:
     purchase: purchase-topic
+    transaction: transaction-topic
     
 eureka:
   client:
